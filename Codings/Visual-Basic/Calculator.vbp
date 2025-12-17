@@ -1,0 +1,88 @@
+' STANDARD CALCULATOR USING CONTROL ARRAY
+
+EX:2 STANDARD CALCULATOR USING CONTROL ARRAY
+Dim a As Integer, b As Integer, d As Integer
+Dim op As String
+----------------------------------------------------------------------------------------------------------------
+Private Sub cmdAdd_Click()
+a = Val(Text1.Text)
+Text1.Text = " "
+op = "+"
+Text1.SetFocus
+End Sub
+----------------------------------------------------------------------------------------------------------------
+Private Sub cmdClr_Click()
+Text1.Text = " "
+End Sub
+----------------------------------------------------------------------------------------------------------------
+Private Sub cmdDiv_Click()
+a = Val(Text1.Text)
+Text1.Text = " "
+op = "/"
+Text1.SetFocus
+End Sub
+----------------------------------------------------------------------------------------------------------------
+Private Sub cmdDot_Click()
+Text1.Text = Text1.Text + "."
+End Sub
+----------------------------------------------------------------------------------------------------------------
+Private Sub cmdMul_Click()
+a = Val(Text1.Text)
+Text1.Text = " "
+op = "*"
+Text1.SetFocus
+End Sub
+----------------------------------------------------------------------------------------------------------------
+Private Sub cmdOff_Click()
+Unload Me
+End Sub
+----------------------------------------------------------------------------------------------------------------
+Private Sub cmdOn_Click()
+Text1.Enabled = True
+Text1.SetFocus
+End Sub
+----------------------------------------------------------------------------------------------------------------
+Private Sub cmdSign_Click()
+Text1.Text = -Text1.Text
+End Sub
+----------------------------------------------------------------------------------------------------------------
+Private Sub cmdEqual_Click()
+b = Val(Text1.Text)
+If op = "+" Then
+Text1.Text = a + b
+Else
+If op = "-" Then
+Text1.Text = a - b
+Else
+If op = "*" Then
+Text1.Text = a * b
+Else
+If op = "/" Then
+Text1.Text = a / b
+End If
+End If
+End If
+End If
+End Sub
+----------------------------------------------------------------------------------------------------------------
+Private Sub cmdnum_Click(Index As Integer)
+If Text1.Enabled = False Then
+MsgBox "Please Switch on the Calculator"
+Else
+d = cmdnum(Index).Caption
+Text1.Text = Text1.Text & d
+End If
+End Sub
+----------------------------------------------------------------------------------------------------------------
+Private Sub cmdSub_Click()
+a = Val(Text1.Text)
+Text1.Text = " "
+op = "-"
+Text1.SetFocus
+End Sub
+----------------------------------------------------------------------------------------------------------------
+Private Sub Form_Load()
+Text1.Enabled = flase
+Me.WindowState = 2
+End Sub
+----------------------------------------------------------------------------------------------------------------
