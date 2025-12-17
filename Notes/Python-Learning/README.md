@@ -11,14 +11,12 @@
 ---
 
 ## 📘 Overview
-This repository contains all my **daily coding tasks** completed during a **30-day Python internship**.  
-Each day’s progress is organized folder-wise (`Day 1 → Day 30`) with code files and notes.
 
-This public repository serves both as my personal learning tracker and as a **free resource** for anyone who wants to **learn Python** through real-world exercises and structured examples.
+- This folder contains all my **daily coding tasks** completed during a **30-day Python internship**.  
+- Each day’s progress is organized folder-wise (`Day 1 → Day 30`) with code files and notes.
+- This public repository serves both as my personal learning tracker and as a **free resource** for anyone who wants to **learn Python** through real-world exercises and structured examples.
 
 > Note : I'm familiar with the term coding because of my previous knowledge in Java and C++, so I have written this repo project in my way of understanding.
-
-<img src="https://github.com/user-attachments/assets/fddcdbcd-5ea2-4416-9f59-ca7fd9394aca" width="300">
 
 ---
 
@@ -95,55 +93,10 @@ By the end of this internship, I aim to:
 
 ---
 
-## 💡 How to Use
-
-### 1. Clone this repository
-```bash
-git clone https://github.com/<your-username>/Python-Learning.git
-```
-
-### 2. Navigate to any day’s folder
-```bash
-cd Day_01
-```
-
-### 3. Run the script
-```bash
-python task.py
-```
-
-```bash
-python notes.md
-``` 
-
----
-
-## 🤝 Contributions
-
-This is a public repo — feel free to:
-
-- Explore the tasks and code samples
-- Suggest improvements via Pull Requests
-- Share feedback or explanations
-
----
-
 ## 🙏 Acknowledgment
 
 Special thanks to Besant Technologies, Mohamed Ismail sir (General Manager) Pavimithra mam (Hr), Rajalakshmi mam (Hr) and Gowthami Shyam mam (Mentor) for their guidance and support throughout this internship. 
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/company/besant-technologies/) 
-
----
-
-## 👨‍💻 Author
-
-### Vinaal R
-
-Passionate Learner | Aspiring Developer | Python Enthusiast
-
-### Contact me through 
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vinaal/) [![GitHub](https://img.shields.io/badge/GitHub-%23181717.svg?logo=github&logoColor=white)](https://github.com/Dark-Vinaal) 
 
 ---
