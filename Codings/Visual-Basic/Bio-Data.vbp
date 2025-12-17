@@ -1,0 +1,47 @@
+' Bio – Data using Standard Controls
+
+Private Sub cmdCancel_Click()
+End
+End Sub
+----------------------------------------------------------------------------------------------------------------
+Private Sub cmdClear_Click()
+Txtname.Text = " "
+Txtfname.Text = " "
+Txtaddr.Text = " "
+Txtnationality.Text = " "
+Txtcontactno.Text = " "
+Txtqualification.Text = " "
+codate.RemoveItem (codate.ListIndex)
+comonth.RemoveItem (comonth.ListIndex)
+coyear.RemoveItem (coyear.ListIndex)
+optfemale.Value = False
+optmale.Value = False
+End Sub
+----------------------------------------------------------------------------------------------------------------
+Private Sub cmdSubmit_Click()
+MsgBox "Thankyou!" & Txtname.Text
+End Sub
+----------------------------------------------------------------------------------------------------------------
+Private Sub Form_Load()
+codate.AddItem "1"
+codate.AddItem "2"
+codate.AddItem "3"
+codate.AddItem "4"
+codate.AddItem "5"
+codate.AddItem "6"
+codate.AddItem "7"
+codate.AddItem "8"
+codate.AddItem "9"
+codate.AddItem "10"
+comonth.AddItem "JAN"
+comonth.AddItem "FEB"
+comonth.AddItem "MAR"
+coyear.AddItem "1990"
+coyear.AddItem "1991"
+coyear.AddItem "1992"
+coyear.AddItem "1993"
+coyear.AddItem "1994"
+coyear.AddItem "1995"
+Me.WindowState = 2
+End Sub
+----------------------------------------------------------------------------------------------------------------
