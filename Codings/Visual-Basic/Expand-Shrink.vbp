@@ -1,0 +1,46 @@
+' EXPAND AND SHRINK (ANIMATION)
+
+Private Sub cmdEnd_Click()
+Unload Me
+End Sub
+----------------------------------------------------------------------------------------------------------------
+
+Private Sub cmdStart_Click()
+Timer1.Enabled = False
+Timer2.Enabled = True
+End Sub
+----------------------------------------------------------------------------------------------------------------
+
+Private Sub cmdStop_Click()
+Timer1.Enabled = False
+Timer2.Enabled = False
+End Sub
+----------------------------------------------------------------------------------------------------------------
+
+Private Sub Form_Load()
+Me.WindowState = 2
+Timer1.Enabled = False
+Timer2.Enabled = False
+End Sub
+----------------------------------------------------------------------------------------------------------------
+
+Private Sub Timer1_Timer()
+If (P1.Height < Me.Height And P1.Width > 900) Then
+P1.Height = P1.Height + 100
+P1.Width = P1.Width + 100
+Else
+Timer1.Enabled = False
+Timer2.Enabled = True
+End If
+End Sub
+----------------------------------------------------------------------------------------------------------------
+Private Sub Timer2_Timer()
+If (P1.Height > 900 And P1.Width > 900) Then
+P1.Height = P1.Height - 100
+P1.Width = P1.Width - 100
+Else
+Timer1.Enabled = True
+Timer2.Enabled = False
+End If
+End Sub
+----------------------------------------------------------------------------------------------------------------
