@@ -386,12 +386,26 @@ git push --force-with-lease
 
 These are platform features rather than core Git terminal commands.
 
--   **Forking:** Copying a repo to your own account to modify it independently.
-    
--   **Pull Request (PR):** Proposing your changes to the original repository for review.
-    
--   **Issues:** A dashboard for tracking bugs, tasks, and feature requests.
-    
--   **GitHub Actions:** Automating tests, builds, and deployments (CI/CD).
+- Forking
+  - Creates a copy of another user’s repository in your account.
+  - Used for contributing to Open Source.
+
+- Pull Request (PR)
+  - Requests to merge changes into another branch/repository.
+  - Enables code review and discussion.
+
+- Issues & Actions
+  - Issues: Tracks bugs, tasks, and feature requests.
+  - Actions: Automates CI/CD (Testing, Deployment).
+
+---
+
+## 🧠 Summary
+
+> Git = Local version control (tracks history).
+
+> GitHub = Remote hosting (collaboration & automation).
+
+> Workflow : `add` → `commit` → `push`.
 
 ---
