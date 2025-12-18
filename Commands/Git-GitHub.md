@@ -85,7 +85,7 @@ git commit -m "Brief descriptive message"
 git push origin branch-name
 ```
 
-> **Note:** Branch name can be either <main> or <master> most commonly.. If not then add you desired branch name.
+> **Note:** Branch name can be either main or master most commonly.. If not then add you desired branch name.
 
 ---
 
@@ -97,7 +97,7 @@ git push origin branch-name
 git push -u origin branch-name
 ```
 
-> **Note:** Branch name can be either <main> or <master> most commonly.. If not then add you desired branch name.
+> **Note:** Branch name can be either main or master most commonly.. If not then add you desired branch name.
 
 ---
 
