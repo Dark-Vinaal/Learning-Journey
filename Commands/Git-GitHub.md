@@ -566,12 +566,12 @@ gh issue create
 
 ## 🧠 Summary
 
-> Git = Local version control (tracks history).
+**Git** = Local version control (tracks history).
 
-> GitHub = Remote hosting (collaboration & automation).
+**GitHub** = Remote hosting (collaboration & automation).
 
-> Workflow : `add` → `commit` → `push`.
+**Workflow** : `add` → `commit` → `push`.
 
-> GitHub CLI : Terminal Efficiency → `gh pr create`, `gh repo view`
+**GitHub CLI** : Terminal Efficiency → `gh pr create`, `gh repo view`
 
 ---
