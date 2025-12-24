@@ -1,6 +1,8 @@
-## 🏗️ The Architecture of Intelligence: LLMs, SLMs, and Modals
+## 🏗️ The Architecture of Intelligence
 
-To understand how AI functions in 2025, we must look at the data it consumes and the scale of the models that process it.
+#### LLMs, SLMs, and Modals :
+
+- To understand how AI functions in 2025, we must look at the data it consumes and the scale of the models that process it.
 
 ---
 
@@ -19,6 +21,7 @@ Before an AI can "think," it needs a **Corpus**.
 ---
 
 ### 2. LLM vs. SLM: Size vs. Efficiency
+
 The industry is currently split between "Bigger is Better" and "Smaller is Smarter."
 
 | Feature | Large Language Models (LLM) | Small Language Models (SLM) |
@@ -33,9 +36,8 @@ The industry is currently split between "Bigger is Better" and "Smaller is Smart
 ---
 
 ### 3. Multimodality (The "Modals")
+
 Early AI was **Unimodal** (text-only). Modern AI is **Multimodal**, meaning it can process and generate different types (modalities) of data simultaneously.
-
-
 
 * **Input Modalities:** Text, Image, Audio, Video, Sensor data (LiDAR, Heat).
 * **Fusion:** This is the process where the AI combines a picture and a text prompt to "understand" context (e.g., "Look at this image of my fridge and tell me what I can cook").
@@ -44,9 +46,36 @@ Early AI was **Unimodal** (text-only). Modern AI is **Multimodal**, meaning it c
 ---
 
 ### 4. How We Shrink Models: Optimization Techniques
+
 Since we can't fit a 1-Trillion parameter model on a phone, we use three main techniques:
 1.  **Quantization:** Reducing the numerical precision of the model (like turning a 4K video into 1080p to save space).
 2.  **Pruning:** Removing "dead" or redundant neurons in the neural network that don't contribute much to the output.
 3.  **Knowledge Distillation:** Using a massive "Teacher" model to train a tiny "Student" model to mimic its logic.
+
+---
+
+## 🎨 Generative AI (GenAI)
+
+- Generative AI focuses on creating **new** content rather than just analyzing existing data.
+
+### 1. The Creative Engines
+
+* **GANs (Generative Adversarial Networks):** Two networks "competing" to create realistic images.
+* **Diffusion Models:** The current gold standard (used in DALL-E 3, Midjourney). They create images by starting with "noise" and gradually refining it into a clear picture.
+* **Video Generation:** 2025 is the year of high-fidelity video (e.g., **OpenAI Sora**, **Google Veo 3**), capable of generating 60-second cinematic clips with consistent physics.
+
+---
+
+### 2. Multimodal Generation
+
+- GenAI is no longer restricted to one "modal." Modern systems can take a **Text** prompt and generate **Video + Audio + 3D Assets** simultaneously, ensuring the sound matches the visual action perfectly.
+
+---
+
+### 3. Ethical Challenges
+
+* **Deepfakes:** AI-generated media used for misinformation.
+* **Copyright:** The ongoing debate about using human-created "Corpora" to train generative models.
+* **Energy Consumption:** The massive power required to run the H100 GPU clusters that power GenAI.
 
 ---
