@@ -8,11 +8,11 @@
 
 ## 📋 Table of Contents
 
-- 1. [Introduction to AI](#introduction-to-ai) 
-- 2. [Key Features of Modern AI](#key-features-of-modern-ai)
-- 3. [Scope Across Industries](#scope-across-industries)
-- 4. [The Future of AI (2025-2030)](#the-future-of-ai)
-- 5. [Learning Roadmap](#learning-roadmap)
+1. [Introduction to AI](#introduction-to-ai) 
+2. [Key Features of Modern AI](#key-features-of-modern-ai)
+3. [Scope Across Industries](#scope-across-industries)
+4. [The Future of AI (2025-2030)](#the-future-of-ai)
+5. [Learning Roadmap](#learning-roadmap)
 
 ---
 
@@ -55,10 +55,11 @@
 
 ## 🚀 The Future of AI (2025-30 & Beyond)
 
-- The next decade marks a shift toward **Human-AI Collaboration**:
-  - 1. **Sovereign AI:** Nations developing their own localized AI infrastructure and models to protect data privacy.
-  - 2. **Sustainability (Green AI):** Shift toward energy-efficient training and liquid-cooling data centers.
-  - 3. **Physical Embodiment:** The rise of humanoid robots (like Tesla Optimus) integrating LLMs into physical labor.
-  - 4. **AGI Milestones:** Continued progress toward "system 2 thinking" where AI achieves human-level reasoning across broad domains.
+The next decade marks a shift toward **Human-AI Collaboration**:
+
+1. **Sovereign AI:** Nations developing their own localized AI infrastructure and models to protect data privacy.
+2. **Sustainability (Green AI):** Shift toward energy-efficient training and liquid-cooling data centers.
+3. **Physical Embodiment:** The rise of humanoid robots (like Tesla Optimus) integrating LLMs into physical labor.
+4. **AGI Milestones:** Continued progress toward "system 2 thinking" where AI achieves human-level reasoning across broad domains.
 
 ---
