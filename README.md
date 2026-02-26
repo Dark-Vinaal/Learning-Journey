@@ -6,7 +6,7 @@
 
 ## My Learning Journey 
 
-- This repository contains a well-organized collection of notes and coding exercises created during my academic and self-learning journey. It documents my learning process across various topics, highlighting both conceptual understanding and practical implementation through hands-on coding.
+- This repository contains a well-organized collection of notes, coding, commands, queries, prompts created during my academic and self-learning journey. It documents my learning process across various topics, highlighting both conceptual understanding and practical implementation through hands-on coding, queries, and commands as well as prompts used by prompt engineer. 
 
 ---
 
