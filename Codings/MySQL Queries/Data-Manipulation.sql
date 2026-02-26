@@ -75,5 +75,4 @@ Query OK, 0 rows affected (0.091 sec)
 
   -- Since the Table is deleted, DESCRIBE Query does'nt work. So error pops up!
 mysql> DESCRIBE Person;
-ERROR 1146 (42S02): Table 'vinaal.Person' doesn't exist
-MariaDB [vinaal]>
+ERROR 1146 (42S02): Table '-.Person' doesn't exist
