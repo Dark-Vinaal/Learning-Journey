@@ -1,9 +1,0 @@
-## Python Commands
-
-### `pip`
-
----
-
-### `uv`
-
----
