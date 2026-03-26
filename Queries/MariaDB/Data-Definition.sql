@@ -1,4 +1,4 @@
--- Data Manipulation Language (DML)
+-- Data Definition Language (DDL)
 
 
 -- Creating the Table as 'Student'
