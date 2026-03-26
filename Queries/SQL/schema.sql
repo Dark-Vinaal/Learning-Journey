@@ -1,8 +1,11 @@
 -- Database Creation
-CREATE DATABASE Dark;
+CREATE DATABASE DB123;
 
 -- Display all the Databases
 SHOW DATABASES;
 
 -- Using the Database 
-USE Dark;
+USE DB123;
+
+-- Display all the Tables in Current Using Database
+SHOW TABLES;
