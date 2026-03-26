@@ -36,6 +36,22 @@ MariaDB [-]> DESCRIBE Student;
 +----------+---------------+------+-----+---------+-------+
 6 rows in set (0.001 sec)
 
+MariaDB [-]> ALTER TABLE Student DROP COLUMN Salary;
+Query OK, 0 rows affected (0.107 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [-]> DESCRIBE Student;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| ID       | int(11)     | NO   | PRI | NULL    |       |
+| Name     | varchar(20) | YES  |     | NULL    |       |
+| Age      | int(11)     | YES  |     | NULL    |       |
+| Phone_No | bigint(20)  | YES  |     | NULL    |       |
+| Studies  | varchar(30) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+5 rows in set (0.065 sec)
+
 -- Renaming the Table from 'Student' to 'Person'
 MariaDB [-]> RENAME TABLE Student TO Person;
 Query OK, 0 rows affected (0.026 sec)
@@ -49,7 +65,6 @@ MariaDB [-]> DESCRIBE Person;
 | Age      | int(11)       | YES  |     | NULL    |       |
 | Phone_No | bigint(20)    | YES  |     | NULL    |       |
 | Studies  | varchar(30)   | YES  |     | NULL    |       |
-| Salary   | decimal(10,2) | YES  |     | NULL    |       |
 +----------+---------------+------+-----+---------+-------+
 6 rows in set (0.002 sec)
 
@@ -66,7 +81,6 @@ MariaDB [-]> DESCRIBE Person;
 | Age      | int(11)       | YES  |     | NULL    |       |
 | Phone_No | bigint(20)    | YES  |     | NULL    |       |
 | Studies  | varchar(30)   | YES  |     | NULL    |       |
-| Salary   | decimal(10,2) | YES  |     | NULL    |       |
 +----------+---------------+------+-----+---------+-------+
 6 rows in set (0.001 sec)
 
