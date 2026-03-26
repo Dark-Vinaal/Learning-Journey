@@ -1,11 +1,11 @@
--- Data Manipulation Language (DML)
+-- Data Definition Language (DDL)
 
 
--- Creating the Table
+-- Creating the Table as 'Student'
 mysql> CREATE TABLE Student(ID INT PRIMARY KEY, Name VARCHAR(20), Age INT, Phone_No BIGINT, Studies VARCHAR(30));
 Query OK, 0 rows affected (0.092 sec)
 
--- Describing The Table
+-- Describing the Table
 mysql> DESCRIBE Student;
 +----------+-------------+------+-----+---------+-------+
 | Field    | Type        | Null | Key | Default | Extra |
@@ -18,7 +18,7 @@ mysql> DESCRIBE Student;
 +----------+-------------+------+-----+---------+-------+
 5 rows in set (0.065 sec)
 
--- Altering the Table
+-- Altering the Table by Adding a New Column
 mysql> ALTER TABLE Student ADD COLUMN Salary DECIMAL(10, 2);
 Query OK, 0 rows affected (0.107 sec)
 Records: 0  Duplicates: 0  Warnings: 0
@@ -36,7 +36,23 @@ mysql> DESCRIBE Student;
 +----------+---------------+------+-----+---------+-------+
 6 rows in set (0.001 sec)
 
--- Renaming Table
+mysql> ALTER TABLE Student DROP COLUMN Salary;
+Query OK, 0 rows affected (0.107 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESCRIBE Student;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| ID       | int(11)     | NO   | PRI | NULL    |       |
+| Name     | varchar(20) | YES  |     | NULL    |       |
+| Age      | int(11)     | YES  |     | NULL    |       |
+| Phone_No | bigint(20)  | YES  |     | NULL    |       |
+| Studies  | varchar(30) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+5 rows in set (0.065 sec)
+
+-- Renaming the Table from 'Student' to 'Person'
 mysql> RENAME TABLE Student TO Person;
 Query OK, 0 rows affected (0.026 sec)
 
@@ -49,7 +65,6 @@ mysql> DESCRIBE Person;
 | Age      | int(11)       | YES  |     | NULL    |       |
 | Phone_No | bigint(20)    | YES  |     | NULL    |       |
 | Studies  | varchar(30)   | YES  |     | NULL    |       |
-| Salary   | decimal(10,2) | YES  |     | NULL    |       |
 +----------+---------------+------+-----+---------+-------+
 6 rows in set (0.002 sec)
 
@@ -66,7 +81,6 @@ mysql> DESCRIBE Person;
 | Age      | int(11)       | YES  |     | NULL    |       |
 | Phone_No | bigint(20)    | YES  |     | NULL    |       |
 | Studies  | varchar(30)   | YES  |     | NULL    |       |
-| Salary   | decimal(10,2) | YES  |     | NULL    |       |
 +----------+---------------+------+-----+---------+-------+
 6 rows in set (0.001 sec)
 
