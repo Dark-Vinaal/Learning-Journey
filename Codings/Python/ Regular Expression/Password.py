@@ -19,7 +19,7 @@ while True:
     elif not re.search("[_@$]", password):
         flag = -1
         break
-    elif re.search("/s", password):
+    elif re.search("\s", password):
         flag = -1
         break
     else:
