@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library System</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        input, button { margin: 5px; padding: 5px; }
+    </style>
+</head>
+<body>
+
+<h1>Library System</h1>
+
+<h3>Add Book:</h3>
+<input id="name" placeholder="Title">
+<input id="value" placeholder="Author">
+<input id="category" placeholder="Genre">
+<input id="type" placeholder="Year">
+<button onclick="add()">Add</button>
+
+<h3>Books List:</h3>
+<ul id="list"></ul>
+
+<script>
+async function add() {
+    let item = {
+        name: name.value,
+        value: value.value,
+        category: category.value,
+        type: type.value
+    };
+
+    await fetch("/items", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(item)
+    });
+
+    list.innerHTML += `<li>${item.name} by ${item.value}</li>`;
+}
+</script>
+
+</body>
+</html>
