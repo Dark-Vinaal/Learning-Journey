@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restaurant System</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        input, button { margin: 5px; padding: 5px; }
+    </style>
+</head>
+<body>
+
+<h1>Restaurant System</h1>
+
+<h3>Add Food:</h3>
+<input id="name" placeholder="Food Name">
+<input id="price" type="number" placeholder="Price">
+<input id="category" placeholder="Category">
+<input id="type" placeholder="Type">
+<button onclick="addFood()">Add</button>
+
+<h3>Food List:</h3>
+<ul id="list"></ul>
+
+<script>
+async function addFood() {
+    let food = {
+        name: name.value,
+        price: price.value,
+        category: category.value,
+        type: type.value
+    };
+
+    await fetch("/food", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(food)
+    });
+
+    list.innerHTML += `<li>${food.name} - ₹${food.price}</li>`;
+}
+</script>
+
+</body>
+</html>

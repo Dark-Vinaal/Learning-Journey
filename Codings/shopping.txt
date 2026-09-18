@@ -1,0 +1,35 @@
+import React, { useState } from "react";
+
+const App = () => {
+  const [items, setItems] = useState([]);
+  const [newitem, setnewItem] = useState("");
+
+  const add = () => {
+    if (newitem) {
+      setItems([...items, newitem]);
+      setnewItem("");
+    }
+  };
+
+  return (
+    <div>
+      <h1>Shopping List</h1>
+      <input value={newitem} onChange={e => setnewItem(e.target.value)}
+        placeholder="Add an item" />
+      <button onClick={add}>Add</button>
+
+      <ul>
+        {items.map((x, i) => (
+          <li key={i}>
+            {x}
+            <button onClick={() => setItems(items.filter((_, j) => j != i))}>
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default App;
