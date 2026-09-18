@@ -5,18 +5,17 @@ const path = require("path");
 const app = express();
 app.use(express.json());
 
-mongoose.connect("mongodb://localhost/restaurant");
+mongoose.connect("mongodb://localhost/mydb");
 
-const Food = mongoose.model("Food", {
+const Item = mongoose.model("Item", {
     name: String,
-    price: Number,
+    value: String,
     category: String,
     type: String
 });
 
-app.post("/food", async (req, res) => {
-    const food = await Food.create(req.body);
-    res.json(food);
+app.post("/items", async (req, res) => {
+    res.json(await Item.create(req.body));
 });
 
 app.get("/", (req, res) => {
