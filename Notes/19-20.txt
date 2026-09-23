@@ -1,0 +1,102 @@
+19. 
+package main
+import "fmt"
+func simulateFIFO(pages []int, capacity int) {
+	frames := []int{}
+	faults := 0
+	for _, p := range pages {
+		found := false
+		for _, f := range frames { if f == p { found = true } }
+		if !found {
+			if len(frames) == capacity { frames = frames[1:] }
+			frames = append(frames, p)
+			faults++
+		}
+		fmt.Println("Page", p, "-> Frames:", frames)
+	}
+	fmt.Println("Total Page Faults:", faults)
+}
+func main() {
+	var n, capacity int
+	fmt.Print("Enter number of pages: ")
+	fmt.Scan(&n)
+	pages := make([]int, n)
+	for i := 0; i < n; i++ {
+		fmt.Print("Enter page ", i+1, ": ")
+		fmt.Scan(&pages[i])
+	}
+	fmt.Print("Enter frame capacity: ")
+	fmt.Scan(&capacity)
+	fmt.Println("\n--- FIFO Page Replacement ---")
+	simulateFIFO(pages, capacity)
+}
+
+OUTPUT:
+Enter number of pages: 3
+Enter page 1: 2
+Enter page 2: 6
+Enter page 3: 5
+Enter frame capacity: 3
+
+--- FIFO Page Replacement ---
+Page 2 -> Frames: [2]
+Page 6 -> Frames: [2 6]
+Page 5 -> Frames: [2 6 5]
+Total Page Faults: 3
+
+_____________________________________________________________________________________
+
+20.
+package main
+import (
+	"fmt"
+	"os"
+)
+
+func createFile(name string) {
+	f, _ := os.Create(name)
+	f.Close()
+	fmt.Println("File created successfully")
+}
+
+func writeFile(name, data string) {
+	f, _ := os.OpenFile(name, os.O_APPEND|os.O_WRONLY, 0644)
+	f.WriteString(data)
+	f.Close()
+	fmt.Println("Data written successfully")
+}
+
+func readFile(name string) {
+	data, _ := os.ReadFile(name)
+	fmt.Println("\n--- File Content ---")
+	fmt.Println(string(data))
+}
+
+func main() {
+	var name, data string
+	fmt.Println("--- File Management ---")
+	fmt.Print("Enter file name: ")
+	fmt.Scan(&name)
+	fmt.Print("Enter content: ")
+	fmt.Scan(&data)
+
+	createFile(name)
+	writeFile(name, data)
+	readFile(name)
+
+	os.Mkdir("OSFolder", 0755)
+	fmt.Println("Directory created successfully")
+	fmt.Println("File management completed")
+}
+
+OUTPUT:
+
+Enter file name: sample.txt
+Enter content: OS
+File created successfully
+Data written successfully
+
+--- File Content ---
+OS
+Directory created successfully
+File management completed

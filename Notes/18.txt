@@ -1,0 +1,70 @@
+18.
+package main
+import "fmt"
+func main() {
+	available := []int{3, 3, 2}
+	max := [][]int{
+		{7, 5, 3},
+		{3, 2, 2},
+		{9, 0, 2},
+		{2, 2, 2},
+		{4, 3, 3},
+	}
+	allocation := [][]int{
+		{0, 1, 0},
+		{2, 0, 0},
+		{3, 0, 2},
+		{2, 1, 1},
+		{0, 0, 2},
+	}
+	n := 5
+	m := 3
+	need := make([][]int, n)
+	for i := 0; i < n; i++ {
+		need[i] = make([]int, m)
+		for j := 0; j < m; j++ {
+			need[i][j] = max[i][j] - allocation[i][j]
+		}
+	}
+	work := make([]int, m)
+	copy(work, available)
+	finish := make([]bool, n)
+	safeSequence := []int{}
+	for k := 0; k < n; k++ {
+		for i := 0; i < n; i++ {
+			if !finish[i] {
+				canFinish := true
+				for j := 0; j < m; j++ {
+					if need[i][j] > work[j] {
+						canFinish = false
+						break
+					}
+				}
+				if canFinish {
+					for j := 0; j < m; j++ {
+						work[j] += allocation[i][j]
+					}
+					finish[i] = true
+					safeSequence = append(safeSequence, i)
+				}
+			}
+		}
+	}
+	if len(safeSequence) == n {
+		fmt.Println("System is in SAFE state.")
+		fmt.Print("Safe Sequence: ")
+
+		for i, p := range safeSequence {
+			if i > 0 {
+				fmt.Print(" -> ")
+			}
+			fmt.Printf("P%d", p)
+		}
+		fmt.Println()
+	} else {
+		fmt.Println("System is in UNSAFE state.")
+	}
+}
+Output
+System is in SAFE state.
+Safe Sequence: P1 -> P3 -> P4 -> P0 -> P2

@@ -1,0 +1,144 @@
+16.
+package main
+import "fmt"
+func fcfs(bt []int) {
+	wt, tat := 0, 0
+	fmt.Println("\n--- FCFS Scheduling ---")
+	for i, b := range bt {
+		tat = wt + b
+		fmt.Printf("P%d -> WT: %d TAT: %d\n", i+1, wt, tat)
+		wt = tat
+	}
+}
+
+func roundRobin(bt []int, q int) {
+	rem := append([]int{}, bt...)
+	time := 0
+	fmt.Println("\n--- Round Robin Scheduling ---")
+	for {
+		done := true
+		for i := range rem {
+			if rem[i] > 0 {
+				done = false
+				x := q
+				if rem[i] < q {
+					x = rem[i]
+				}
+				time += x
+				rem[i] -= x
+				if rem[i] == 0 {
+					fmt.Printf("P%d completed at %d\n", i+1, time)
+				}
+			}
+		}
+		if done {
+			break
+		}
+	}
+}
+
+func main() {
+	var n, q int
+	fmt.Print("Enter number of processes: ")
+	fmt.Scan(&n)
+
+	bt := make([]int, n)
+	for i := range bt {
+		fmt.Print("Enter burst time for P", i+1, ": ")
+		fmt.Scan(&bt[i])
+	}
+
+	fmt.Print("Enter time quantum: ")
+	fmt.Scan(&q)
+
+	fcfs(bt)
+	roundRobin(bt, q)
+}
+
+OUTPUT:
+
+Enter number of processes: 3
+Enter burst time for P1: 4
+Enter burst time for P2: 5
+Enter burst time for P3: 6
+Enter time quantum: 3
+
+--- FCFS Scheduling ---
+P1 -> WT: 0 TAT: 4
+P2 -> WT: 4 TAT: 9
+P3 -> WT: 9 TAT: 15
+
+--- Round Robin Scheduling ---
+P1 completed at 10
+P2 completed at 12
+P3 completed at 15
+
+________________________________________________________________________________
+
+17.
+package main
+import (
+	"fmt"
+	"sync"
+)
+type Task struct {
+	id   int
+	text string
+}
+type Result struct {
+	child int
+	task  int
+}
+func worker(id int, input <-chan Task, output chan<- Result, wg *sync.WaitGroup) {
+	defer wg.Done()
+
+	for task := range input {
+		fmt.Printf("Child %d received: %s\n", id, task.text)
+		output <- Result{id, task.id}
+	}
+
+	fmt.Printf("Child %d finished.\n", id)
+}
+func main() {
+	tasks := make(chan Task)
+	results := make(chan Result)
+	var wg sync.WaitGroup
+	for i := 1; i <= 3; i++ {
+		wg.Add(1)
+		go worker(i, tasks, results, &wg)
+	}
+	go func() {
+		wg.Wait()
+		close(results)
+	}()
+	go func() {
+		for i := 1; i <= 6; i++ {
+			tasks <- Task{i, fmt.Sprintf("Task %d", i)}
+		}
+		close(tasks)
+	}()
+	for result := range results {
+		fmt.Printf("Parent received Task %d from Child %d\n",
+			result.task, result.child)
+	}
+	fmt.Println("All child processes completed.")
+}
+
+OUTPUT:
+
+Child 1 received: Task 1
+Parent received Task 1 from Child 1
+Child 2 received: Task 3
+Child 2 received: Task 5
+Child 3 received: Task 2
+Child 1 received: Task 4
+Parent received Task 3 from Child 2
+Parent received Task 5 from Child 2
+Parent received Task 2 from Child 3
+Parent received Task 4 from Child 1
+Child 3 finished.
+Child 2 received: Task 6
+Child 2 finished.
+Parent received Task 6 from Child 2
+Child 1 finished.
+All child processes completed.
