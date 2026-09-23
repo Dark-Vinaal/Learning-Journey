@@ -1,0 +1,33 @@
+package main
+import "fmt"
+
+func main() {
+	alloc := [][]int{{0,1,0},{1,0,1},{1,1,0},{0,1,1},{1,0,0}}
+	max := [][]int{{1,2,1},{2,1,2},{2,2,1},{1,2,2},{2,1,1}}
+	avail := []int{3,3,3}
+	finish := make([]bool, 5)
+	seq := []int{}
+
+	for len(seq) < 5 {
+		for i := 0; i < 5; i++ {
+			if finish[i] { continue }
+			ok := true
+			for j := 0; j < 3; j++ {
+				if max[i][j]-alloc[i][j] > avail[j] { ok = false }
+			}
+			if ok {
+				for j := 0; j < 3; j++ { avail[j] += alloc[i][j] }
+				finish[i] = true
+				seq = append(seq, i)
+			}
+		}
+	}
+
+	fmt.Println("System is in SAFE state.")
+	fmt.Print("Safe Sequence: ")
+	for i, p := range seq {
+		if i > 0 { fmt.Print(" -> ") }
+		fmt.Print("P", p)
+	}
+	fmt.Println()
+}
