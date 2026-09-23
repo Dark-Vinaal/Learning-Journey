@@ -1,0 +1,24 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
+func main() {
+	reader := bufio.NewReader(os.Stdin)
+
+	fmt.Print("Enter file name: ")
+	name, _ := reader.ReadString('\n')
+
+	fmt.Print("Enter content: ")
+	content, _ := reader.ReadString('\n')
+
+	file, _ := os.Create(name)
+	fmt.Println("File created successfully")
+
+	file.WriteString(content)
+	file.Close()
+	fmt.Println("Data written successfully")
+}
